@@ -125,7 +125,7 @@ void GazeboRosProjector::LoadImage(const std_msgs::String::ConstPtr& imageMsg)
   msg.set_name("texture_projector");
   msg.set_texture(imageMsg->data);
   this->projector_pub_->Publish(msg);
-  printf("pass");
+  //printf("pass");
 }
 
 //void Projector::SetTexture(const std::string &_textureName)
