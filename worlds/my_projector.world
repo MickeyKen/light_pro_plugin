@@ -38,6 +38,8 @@
       </link>
 
       <plugin filename="libgazebo_my_projector.so" name="myprojector">
+        <projectorTopicName>image</projectorTopicName>
+        <textureTopicName>texture</textureTopicName>
         <projector>projector_link/texture_projector</projector>
       </plugin>
     </model> 
