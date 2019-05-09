@@ -20,7 +20,7 @@
 
 namespace gazebo
 {
-GZ_REGISTER_MODEL_PLUGIN(GazeboMyProjector);
+GZ_REGISTER_MODEL_PLUGIN(GazeboRosProjector);
 
 typedef std::map<std::string,Ogre::Pass*> OgrePassMap;
 typedef OgrePassMap::iterator OgrePassMapIterator;
@@ -28,7 +28,7 @@ typedef OgrePassMap::iterator OgrePassMapIterator;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Constructor
-GazeboMyProjector::GazeboMyProjector()
+GazeboRosProjector::GazeboRosProjector()
 {
   this->rosnode_ = NULL;
 }
@@ -36,7 +36,7 @@ GazeboMyProjector::GazeboMyProjector()
 
 ////////////////////////////////////////////////////////////////////////////////
 // Destructor
-GazeboMyProjector::~GazeboMyProjector()
+GazeboRosProjector::~GazeboRosProjector()
 {
   // Custom Callback Queue
   this->queue_.clear();
@@ -49,7 +49,7 @@ GazeboMyProjector::~GazeboMyProjector()
 
 ////////////////////////////////////////////////////////////////////////////////
 // Load the controller
-void GazeboMyProjector::Load( physics::ModelPtr _parent, sdf::ElementPtr _sdf )
+void GazeboRosProjector::Load( physics::ModelPtr _parent, sdf::ElementPtr _sdf )
 {
   this->world_ = _parent->GetWorld();
 
@@ -119,7 +119,7 @@ void GazeboMyProjector::Load( physics::ModelPtr _parent, sdf::ElementPtr _sdf )
 
 ////////////////////////////////////////////////////////////////////////////////
 // Load a texture into the projector
-void GazeboMyProjector::LoadImage(const std_msgs::String::ConstPtr& imageMsg)
+void GazeboRosProjector::LoadImage(const std_msgs::String::ConstPtr& imageMsg)
 {
   msgs::Projector msg;
   msg.set_name("texture_projector");
@@ -129,7 +129,7 @@ void GazeboMyProjector::LoadImage(const std_msgs::String::ConstPtr& imageMsg)
 
 ////////////////////////////////////////////////////////////////////////////////
 // Toggle the activation of the projector
-void GazeboMyProjector::ToggleProjector(const std_msgs::Int32::ConstPtr& projectorMsg)
+void GazeboRosProjector::ToggleProjector(const std_msgs::Int32::ConstPtr& projectorMsg)
 {
   msgs::Projector msg;
   msg.set_name("texture_projector");
@@ -140,7 +140,7 @@ void GazeboMyProjector::ToggleProjector(const std_msgs::Int32::ConstPtr& project
 
 ////////////////////////////////////////////////////////////////////////////////
 // Custom callback queue thread
-void GazeboMyProjector::QueueThread()
+void GazeboRosProjector::QueueThread()
 {
   static const double timeout = 0.01;
 
