@@ -136,6 +136,8 @@ add_library(${PROJECT_NAME}
 add_library(gazebo_my_projector SHARED src/gazebo_my_projector.cpp)
 target_link_libraries(gazebo_my_projector ${GAZEBO_LIBRARIES})
 
+#add_library(ccprojector SHARED src/ccprojector.cc)
+#target_link_libraries(ccprojector ${GAZEBO_LIBRARIES})
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
