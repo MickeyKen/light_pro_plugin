@@ -127,6 +127,12 @@ void GazeboRosProjector::LoadImage(const std_msgs::String::ConstPtr& imageMsg)
   this->projector_pub_->Publish(msg);
 }
 
+//void Projector::SetTexture(const std::string &_textureName)
+//{
+//  this->projector.SetTexture(_textureName);
+//}
+
+
 ////////////////////////////////////////////////////////////////////////////////
 // Toggle the activation of the projector
 void GazeboRosProjector::ToggleProjector(const std_msgs::Int32::ConstPtr& projectorMsg)

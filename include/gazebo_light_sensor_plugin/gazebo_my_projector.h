@@ -47,6 +47,8 @@ class GazeboRosProjector : public ModelPlugin
   /// \brief Load the controller
   /// \param node XML config node
   protected: virtual void Load( physics::ModelPtr _parent, sdf::ElementPtr _sdf );
+  
+  public: void SetTexture(const std::string &_textureName);
 
   /// \brief pointer to the world
   private: physics::WorldPtr world_;
